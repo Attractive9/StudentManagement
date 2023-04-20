@@ -1,10 +1,15 @@
-package com.management.student
+package com.management.student.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.management.student.data.StudentInfo
+import com.management.student.databinding.FragmentManagementBinding
+import com.management.student.recyclerview.StudentInfoRecyclerAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,13 +18,16 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ConsultFragment.newInstance] factory method to
+ * Use the [ManagementFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ConsultFragment : Fragment() {
+class ManagementFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private val mList = ArrayList<StudentInfo>()
+    private val mAdapter = StudentInfoRecyclerAdapter(mList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +42,16 @@ class ConsultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consult, container, false)
+        mList.add(StudentInfo("학번", "이름", "증상", "날짜ㅁㄴ"))
+        for(i in 0 .. 20) {
+            mList.add(StudentInfo("123", "준구", "증상", "1"))
+        }
+        val mBinding = FragmentManagementBinding.inflate(inflater, container, false).apply {
+            viewStudentInfo.adapter = mAdapter
+            viewStudentInfo.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+        }
+
+        return mBinding.root
     }
 
     companion object {
@@ -44,12 +61,12 @@ class ConsultFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ConsultFragment.
+         * @return A new instance of fragment ManagementFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ConsultFragment().apply {
+            ManagementFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideInfoBottom"
@@ -36,77 +36,42 @@
         app:layout_constraintGuide_percent="0.7" />
 
     <TextView
-        android:id="@+id/txtGrade"
+        android:id="@+id/txtStudentId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_grade"
-        app:layout_constraintBottom_toTopOf="@id/txtClass"
+        android:text="@string/txt_student_id"
+        app:layout_constraintBottom_toTopOf="@id/txtStudentName"
         app:layout_constraintLeft_toRightOf="@id/guideInfoLeft"
         app:layout_constraintTop_toBottomOf="@id/guideInfoTop" />
 
-    <TextView
-        android:id="@+id/txtClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_class"
-        app:layout_constraintBottom_toTopOf="@id/txtNum"
-        app:layout_constraintLeft_toLeftOf="@id/txtGrade"
-        app:layout_constraintTop_toBottomOf="@id/txtGrade" />
 
     <TextView
-        android:id="@+id/txtNum"
+        android:id="@+id/txtStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_num"
-        app:layout_constraintBottom_toTopOf="@id/txtName"
-        app:layout_constraintLeft_toLeftOf="@id/txtGrade"
-        app:layout_constraintTop_toBottomOf="@id/txtClass" />
-
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_name"
+        android:text="@string/txt_student_name"
         app:layout_constraintBottom_toBottomOf="@id/guideInfoBottom"
-        app:layout_constraintLeft_toLeftOf="@id/txtGrade"
-        app:layout_constraintTop_toBottomOf="@id/txtNum" />
+        app:layout_constraintLeft_toLeftOf="@id/txtStudentId"
+        app:layout_constraintTop_toBottomOf="@id/txtStudentId" />
 
     <EditText
-        android:id="@+id/editGrade"
+        android:id="@+id/editStudentId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/default_margin_lr"
         android:hint="@string/txt_hint"
-        app:layout_constraintBottom_toBottomOf="@id/txtGrade"
-        app:layout_constraintLeft_toRightOf="@id/txtGrade"
-        app:layout_constraintTop_toTopOf="@id/txtGrade" />
+        app:layout_constraintBottom_toBottomOf="@id/txtStudentId"
+        app:layout_constraintLeft_toRightOf="@id/txtStudentId"
+        app:layout_constraintTop_toTopOf="@id/txtStudentId" />
 
     <EditText
-        android:id="@+id/editClass"
+        android:id="@+id/editStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/txt_hint"
-        app:layout_constraintBottom_toBottomOf="@id/txtClass"
-        app:layout_constraintLeft_toLeftOf="@id/editGrade"
-        app:layout_constraintTop_toTopOf="@id/txtClass" />
-
-    <EditText
-        android:id="@+id/editNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_hint"
-        app:layout_constraintBottom_toBottomOf="@id/txtNum"
-        app:layout_constraintLeft_toLeftOf="@id/editGrade"
-        app:layout_constraintTop_toTopOf="@id/txtNum" />
-
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_hint"
-        app:layout_constraintBottom_toBottomOf="@id/txtName"
-        app:layout_constraintLeft_toLeftOf="@id/editGrade"
-        app:layout_constraintTop_toTopOf="@id/txtName" />
+        app:layout_constraintBottom_toBottomOf="@id/txtStudentName"
+        app:layout_constraintLeft_toLeftOf="@id/editStudentId"
+        app:layout_constraintTop_toTopOf="@id/txtStudentName" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdmin"
