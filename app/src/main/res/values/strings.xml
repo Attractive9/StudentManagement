@@ -1,18 +1,36 @@
 <resources>
+    <!-- default -->
     <string name="app_name">StudentManagement</string>
     <string name="app_title">00중학교 보건실</string>
+    <string name="txt_hint">내용을 입력해 주세요.</string>
+    <string name="txt_save">저장</string>
+    <string name="txt_submit">전송</string>
 
-    <!--InfoActivity -->
-    <string name="txt_info_title">학생 정보 입력</string>
+    <!-- DB -->
     <string name="txt_grade">학년</string>
     <string name="txt_class">반</string>
     <string name="txt_num">번호</string>
     <string name="txt_name">이름</string>
-    <string name="txt_hint">내용을 입력해 주세요.</string>
-    <string name="txt_admin">관리자</string>
-    <string name="txt_submit">저장</string>
+    <string name="txt_symptom">증상</string>
+    <string name="txt_date">날짜</string>
 
+    <!-- InfoActivity -->
+    <string name="txt_info_title">학생 정보 입력</string>
+    <string name="txt_admin">관리자</string>
+
+    <!-- NoteActivity -->
+    <string name="txt_note_title">쪽지 상담</string>
+
+    <!-- AdminActivity -->
+    <string name="txt_management_title">학생 관리</string>
+    <string name="txt_consult_title">상담</string>
+
+
+    <!-- dimen -->
     <dimen name="title_font_size">24sp</dimen>
-    <dimen name="default_margin_tb">12dp</dimen>
+    <dimen name="title_margin_tb">32dp</dimen>
+    <dimen name="default_margin_tb">24dp</dimen>
     <dimen name="default_margin_lr">24dp</dimen>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtNoteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin_tb"
+        android:text="@string/txt_note_title"
+        android:textSize="@dimen/title_font_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSymptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin_lr"
+        android:layout_marginTop="@dimen/title_margin_tb"
+        android:text="@string/txt_symptom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoteTitle" />
+
+    <EditText
+        android:id="@+id/editSymptom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin_lr"
+        android:layout_marginRight="@dimen/default_margin_lr"
+        android:hint="@string/txt_hint"
+        app:layout_constraintBottom_toBottomOf="@id/txtSymptom"
+        app:layout_constraintLeft_toRightOf="@+id/txtSymptom"
+        app:layout_constraintRight_toLeftOf="@id/btnSave"
+        app:layout_constraintTop_toTopOf="@id/txtSymptom" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/default_margin_lr"
+        android:text="@string/txt_save"
+        app:layout_constraintBottom_toBottomOf="@id/txtSymptom"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtSymptom" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viewNote"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/default_margin_lr"
+        android:layout_marginTop="@dimen/default_margin_tb"
+        android:layout_marginRight="@dimen/default_margin_lr"
+        app:layout_constraintBottom_toTopOf="@id/editSubmit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSymptom" />
+
+    <EditText
+        android:id="@+id/editSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin_tb"
+        android:hint="@string/txt_hint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/viewNote"
+        app:layout_constraintRight_toLeftOf="@id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@id/viewNote" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_submit"
+        app:layout_constraintBottom_toBottomOf="@id/editSubmit"
+        app:layout_constraintRight_toRightOf="@id/viewNote"
+        app:layout_constraintTop_toTopOf="@id/editSubmit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoActivity"/>
+        <activity android:name=".NoteActivity"/>
+        <activity android:name=".AdminActivity"/>
     </application>
 
 </manifest>
