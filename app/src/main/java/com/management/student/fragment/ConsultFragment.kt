@@ -1,5 +1,7 @@
 package com.management.student.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +36,9 @@ class ConsultFragment : Fragment() {
     private val noteList = ArrayList<Note>()
     private val noteAdapter = NoteRecyclerAdapter(noteList)
 
+    private lateinit var sharedPref: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -54,13 +59,15 @@ class ConsultFragment : Fragment() {
             viewNote.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
             viewStudent.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
+            sharedPref = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
             studentList.add(Student("준구"))
             studentList.add(Student("준구"))
             studentList.add(Student("준구"))
             studentAdapter.notifyDataSetChanged()
 
             btnSubmit.setOnClickListener {
-                noteList.add(Note("준구", editSubmit.text.toString(), 1))
+                noteList.add(Note(sharedPref.getString("studentName", "").toString(), editSubmit.text.toString(), 1))
                 noteAdapter.notifyItemInserted(noteList.size)
                 viewNote.scrollToPosition(noteList.size - 1)
             }
