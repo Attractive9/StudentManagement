@@ -64,7 +64,6 @@ class ManagementFragment : Fragment() {
                 mList.clear()
                 mList.add(StudentInfo("학번", "이름", "증상", "날짜"))
                 for (snapshot in dataSnapshot.children) {
-                    if(snapshot.child("isAdmin").getValue(Boolean ::class.java) != false) continue
                     mList.add(StudentInfo(snapshot.child("id").getValue(String ::class.java) ?: "",
                         snapshot.child("name").getValue(String ::class.java) ?: "",
                         snapshot.child("symptom").getValue(String ::class.java) ?: "",

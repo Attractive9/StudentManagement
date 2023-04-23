@@ -24,7 +24,7 @@ class AdminActivity : AppCompatActivity() {
             addList(ManagementFragment())
         }
 
-        val texts = arrayOf("학생 관리", "상담")
+        val texts = arrayOf("상담", "학생 관리")
 
         mBinding.apply {
             pagerAdmin.adapter = adapter
