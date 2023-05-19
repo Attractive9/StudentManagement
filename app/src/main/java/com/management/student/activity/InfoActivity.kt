@@ -103,5 +103,6 @@ class InfoActivity : AppCompatActivity() {
         checkIsAdmin()
         mBinding.editStudentId.setText(sharedPref.getString("id", ""))
         mBinding.editStudentName.setText(sharedPref.getString("name", ""))
+        mBinding.btnApply.text = if(isAdmin) {getString(R.string.txt_admin) } else { getString(R.string.txt_save) }
     }
 }

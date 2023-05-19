@@ -5,35 +5,42 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txtConsultTitle"
+        android:id="@+id/txtNoteTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/title_margin_tb"
-        android:text="@string/txt_consult_title"
+        android:text="@string/txt_note_title"
         android:textSize="@dimen/title_font_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/viewStudent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/default_margin_lr"
-        android:layout_marginTop="@dimen/title_margin_tb"
-        android:layout_marginRight="@dimen/default_margin_lr"
-        app:layout_constraintBottom_toTopOf="@id/guideManagement"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtConsultTitle" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideManagement"
+    <TextView
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/title_margin_tb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/txtSymptom"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoteTitle" />
+
+    <TextView
+        android:id="@+id/txtSymptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtName"
+        app:layout_constraintLeft_toRightOf="@+id/txtName"
+        app:layout_constraintRight_toLeftOf="@id/txtId"
+        app:layout_constraintTop_toTopOf="@id/txtName" />
+
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtName"
+        app:layout_constraintLeft_toRightOf="@id/txtSymptom"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtName" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/viewNote"
@@ -45,7 +52,7 @@
         app:layout_constraintBottom_toTopOf="@id/editSubmit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideManagement" />
+        app:layout_constraintTop_toBottomOf="@id/txtName" />
 
     <EditText
         android:id="@+id/editSubmit"
@@ -66,5 +73,4 @@
         app:layout_constraintBottom_toBottomOf="@id/editSubmit"
         app:layout_constraintRight_toRightOf="@id/viewNote"
         app:layout_constraintTop_toTopOf="@id/editSubmit" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

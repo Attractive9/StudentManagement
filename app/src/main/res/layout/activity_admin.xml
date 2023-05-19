@@ -4,23 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pagerAdmin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/tabAdmin"
+    <TextView
+        android:id="@+id/txtManagementTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin_tb"
+        android:text="@string/txt_management_title"
+        android:textSize="@dimen/title_font_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabAdmin"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viewStudentInfo"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/default_margin_lr"
+        android:layout_marginTop="@dimen/title_margin_tb"
+        android:layout_marginRight="@dimen/default_margin_lr"
+        android:layout_marginBottom="@dimen/default_margin_tb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:tabIndicatorHeight="0dp"
-        app:tabRippleColor="@android:color/transparent" />
+        app:layout_constraintTop_toBottomOf="@id/txtManagementTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
