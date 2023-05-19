@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +45,6 @@ class NoteActivity : AppCompatActivity() {
             viewNote.layoutManager = LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
 
             btnSave.setOnClickListener {
-                // TODO: 증상 저장 시 데이터 베이스 수정
 
                 val editor = sharedPref.edit()
                 editor.putString("symptom", mBinding.editSymptom.text.toString())
@@ -58,7 +56,7 @@ class NoteActivity : AppCompatActivity() {
                 user["id"] = sharedPref.getString("id", "") ?: ""
                 user["name"] = sharedPref.getString("name", "") ?: ""
                 user["symptom"] = mBinding.editSymptom.text.toString()
-                user["isAdmin"] = sharedPref.getBoolean("isAdmin", false)
+                user["date"] = dateFormat.format(Date())
 
                 userRef.child(uid).setValue(user)
             }

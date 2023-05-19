@@ -52,7 +52,7 @@ class InfoActivity : AppCompatActivity() {
                         editor.putBoolean("isAdmin", true)
                         editor.apply()
                         isAdmin = true
-                        mBinding.btnApply.text = if(isAdmin) {getString(R.string.txt_admin) } else { getString(R.string.txt_save) }
+                        mBinding.btnApply.text = if(isAdmin) { getString(R.string.txt_admin) } else { getString(R.string.txt_save) }
                         break
                     }
                 }

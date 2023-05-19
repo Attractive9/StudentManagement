@@ -45,7 +45,7 @@ class AdminActivity : AppCompatActivity() {
                     mList.add(StudentInfo(snapshot.child("id").getValue(String ::class.java) ?: "",
                         snapshot.child("name").getValue(String ::class.java) ?: "",
                         snapshot.child("symptom").getValue(String ::class.java) ?: "",
-                        "1"))
+                        snapshot.child("date").getValue(String ::class.java) ?: "",))
                 }
                 mAdapter.notifyDataSetChanged()
             }
